@@ -25,10 +25,8 @@ func main() {
 		sc <- 1
 	}()
 
-	//go func() {
 	wg.Wait()
 	close(c)
-	//}()
 
 	<-sc
 }
