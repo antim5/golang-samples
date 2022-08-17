@@ -6,7 +6,7 @@ import (
 	"time"
 )
 
-// Question: what is the app output? for how long it takes?
+// Question: what is the app output? for how long app runs?
 func main() {
 	sc := make(chan struct{})
 	contextA, canelContextA := context.WithCancel(context.Background())

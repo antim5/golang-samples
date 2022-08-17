@@ -7,15 +7,20 @@ import (
 	"log"
 )
 
+/*
+Identify the RC for the following error:
+panic: runtime error: invalid memory address or nil pointer dereference
+[signal SIGSEGV: segmentation violation code=0x1 addr=0x20 pc=0x46597d]
+*/
 func main() {
 	var buf *bytes.Buffer
-	boo(buf)
+	write1(buf)
 	if buf != nil {
 		fmt.Println(buf)
 	}
 }
 
-func boo(p io.Writer) {
+func write1(p io.Writer) {
 	if p != nil {
 		_, err := p.Write([]byte("test"))
 		if err != nil {
