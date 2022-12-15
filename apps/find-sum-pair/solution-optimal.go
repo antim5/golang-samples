@@ -33,11 +33,13 @@ func findSumPair(nums []int, k int) (r []int) {
 
 func main() {
 	/*
-		findSumPair([2, -4, 10], 6) => [-4, 10]
-		findSumPair([3, 6, 3], 6) => [3, 3]
-		findSumPair([3, 6], 6) => None
+			findSumPair([2, -5, 5, 10], 5) => [-5, 10]
+			findSumPair([3, 6, 3, 0], 6) => [3, 3]
+		    findSumPair([4, -4, 3, 10], 7) => [4, 3]
+			findSumPair([3, 6], 15) => []
 	*/
-	fmt.Println(findSumPair([]int{2, -4, 10}, 6))
-	fmt.Println(findSumPair([]int{3, 6, 3}, 6))
-	fmt.Println(findSumPair([]int{3, 6}, 6))
+	fmt.Println(findSumPair([]int{2, -5, 5, 10}, 5))
+	fmt.Println(findSumPair([]int{3, 6, 3, 0}, 6))
+	fmt.Println(findSumPair([]int{4, -4, 3, 10}, 7))
+	fmt.Println(findSumPair([]int{3, 6}, 15))
 }
