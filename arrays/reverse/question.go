@@ -8,3 +8,7 @@ func main() {
 	fmt.Println(a)
 	// Output: [105 70 35 15 10]
 }
+
+func reverse(s []int) {
+
+}
