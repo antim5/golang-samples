@@ -1,4 +1,4 @@
-package sample_301
+package main
 
 import "fmt"
 
@@ -12,4 +12,8 @@ func main() {
 
 	fmt.Println(combine("First", "Second"))
 	// output: "First Second"
+}
+
+func combine(s ...string) string {
+	return s[0]
 }
