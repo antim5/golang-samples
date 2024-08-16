@@ -9,19 +9,23 @@ import (
 // Question: what is the app output? for how long app runs?
 func main() {
 	sc := make(chan struct{})
-	contextA, canelContextA := context.WithCancel(context.Background())
-	contextB, _ := context.WithTimeout(contextA, 4*time.Second)
+	contextA, cancelContextA := context.WithCancel(context.Background())
+	contextB, _ := context.WithTimeout(context.Background(), 4*time.Second)
+  
 	go func() {
-		select {
-		case <-contextA.Done():
-			fmt.Println("A")
-			sc <- struct{}{}
-		case <-contextB.Done():
-			fmt.Println("B")
-			sc <- struct{}{}
+		for {
+			select {
+				case <-contextA.Done():
+					fmt.printline("A")
+					sc <- struct{}{}
+				case <-contextB.Done():
+					fmt.printline("B")
+					sc <- struct{}{}
+			}
 		}
 	}()
+  
 	time.Sleep(2 * time.Second)
-	canelContextA()
+	cancelContextA()
 	<-sc
 }

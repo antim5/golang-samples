@@ -3,18 +3,13 @@ package main
 import "fmt"
 
 func findSumPair(nums []int, k int) (r []int) {
-	sm := make(map[int]int)
-
-	for idx, num := range nums {
-		if _, ok := sm[num]; !ok {
-			sm[num] = idx
-		}
-	}
+	sm := make(map[int]struct{})
 
 	for _, num := range nums {
 		if _, ok := sm[(k - num)]; ok {
 			return []int{num, k - num}
 		}
+		sm[num] = struct{}{}
 	}
 
 	/*	for outerIdx, i := range nums {
@@ -28,15 +23,15 @@ func findSumPair(nums []int, k int) (r []int) {
 			}
 		}
 	*/
-	return nil
+	return []int{}
 }
 
 func main() {
 	/*
-			findSumPair([2, -5, 5, 10], 5) => [-5, 10]
-			findSumPair([3, 6, 3, 0], 6) => [3, 3]
-		    findSumPair([4, -4, 3, 10], 7) => [4, 3]
-			findSumPair([3, 6], 15) => []
+		findSumPair([2, -5, 5, 10],  5) =>  [-5, 10]
+		findSumPair([3, 6, 3, 0],    6) =>  [3, 3]
+		findSumPair([4, -4, 3, 10],  7) =>  [4, 3]
+		findSumPair([3, 6],         15) =>  []
 	*/
 	fmt.Println(findSumPair([]int{2, -5, 5, 10}, 5))
 	fmt.Println(findSumPair([]int{3, 6, 3, 0}, 6))

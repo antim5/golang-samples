@@ -4,11 +4,14 @@ import "fmt"
 
 func main() {
 	init := [5]string{"A", "B", "C", "D"}
-	s1 := init[2:4]
-	s2 := init[:3]
-	s3 := init[3:]
+	s1 := init[2:5]
 
 	fmt.Println(s1, len(s1), cap(s1))
-	fmt.Println(s2, len(s2), cap(s2))
-	fmt.Println(s3, len(s3), cap(s3))
 }
+
+func updateSlice(s1 []string) {
+	s1[0] = "G"
+	s1 = append(s1, "E")
+	s1[1] = "H"
+}
+

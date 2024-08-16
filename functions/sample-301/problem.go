@@ -5,7 +5,7 @@ import "fmt"
 // implement the 'combine' function
 func main() {
 	fmt.Println(combine())
-	// output: none
+	// output: ""
 
 	fmt.Println(combine("Red", "Yellow", "Green"))
 	// output: "Red Yellow Green"

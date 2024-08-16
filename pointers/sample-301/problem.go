@@ -7,6 +7,12 @@ import (
 	"log"
 )
 
+// buffer.go
+type Buffer struct {
+	io.Writer
+}
+func (b *Buffer) Write(in []bytes) { ... }
+
 /*
 Identify the RC for the following error:
 panic: runtime error: invalid memory address or nil pointer dereference
